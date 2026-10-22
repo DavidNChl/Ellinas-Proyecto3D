@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f8f27d98c71c83a46aeed311793b38a0, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -256,6 +256,63 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &372579933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 553.2488
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9387769
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 924.4155
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99676377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008119671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.080386974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000000654835
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 9.222
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172351226854469009, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_Name
+      value: StreetLamp1_Short (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,13 +404,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.67128867, y: -0.6685583, z: 0.27174038, w: -0.1689929}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.174, y: -170.094, z: 93.476}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +751,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6066762612694914956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 529.8148
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 938.33386
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99676377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008119671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.080386974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000000654835
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 9.222
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133907157671321474, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172351226854469009, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
+      propertyPath: m_Name
+      value: StreetLamp1_Short
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4bb0abc8a7a4b594981edf6967d5a30b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -702,3 +816,5 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 2043660877}
   - {fileID: 1601833107}
+  - {fileID: 6066762612694914956}
+  - {fileID: 372579933}
