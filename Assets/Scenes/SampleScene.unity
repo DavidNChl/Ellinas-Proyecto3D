@@ -14,18 +14,18 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
+  m_Fog: 1
+  m_FogColor: {r: 0.29013884, g: 0.33631396, b: 0.3773585, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0.017
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.0015519316, g: 0.0045723584, b: 0.0106132105, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.4022339, g: 0.47538376, b: 0.6509434, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -474,11 +474,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.813
+      value: 1.81
       objectReference: {fileID: 0}
     - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.144
+      value: 0.246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9913633
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.13114505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385100315905595322, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -15.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471068488705135540, guid: e279dbe314427e04da4dc1c4dd2d89e9, type: 3}
+      propertyPath: far clip plane
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
