@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1918
     height: 980
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 9}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -963,7 +963,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__top
-      displayed: 0
+      displayed: 1
       id: Brush Attributes
       index: 3
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -991,7 +991,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__left
-      displayed: 0
+      displayed: 1
       id: Terrain Tools
       index: 0
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -1005,12 +1005,12 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__left
-      displayed: 0
+      displayed: 1
       id: Brush Masks
       index: 1
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
-      collapsed: 0
+      collapsed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1216,9 +1216,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 527.55676, y: 0.6265223, z: 937.23175}
+    m_Target: {x: -25.925467, y: 8.756495, z: -56.17846}
     speed: 2
-    m_Value: {x: 527.55676, y: 0.6265223, z: 937.23175}
+    m_Value: {x: -25.925467, y: 8.756495, z: -56.17846}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1265,13 +1265,13 @@ MonoBehaviour:
     m_gridOpacity: 0.5
     m_NearestPlaneToHandleMode: 0
   m_Rotation:
-    m_Target: {x: 0.055142246, y: 0.69328165, z: -0.053363867, w: 0.71659625}
+    m_Target: {x: -0.2559058, y: -0.57269377, z: 0.1947238, w: -0.7543606}
     speed: 2
-    m_Value: {x: 0.055142246, y: 0.6932816, z: -0.053363867, w: 0.71659625}
+    m_Value: {x: 0.2559058, y: 0.57269377, z: -0.1947238, w: 0.7543606}
   m_Size:
-    m_Target: 7.071068
+    m_Target: 8.096121
     speed: 2
-    m_Value: 7.071068
+    m_Value: 8.096121
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1354,7 +1354,7 @@ MonoBehaviour:
     m_DynamicPanelBehaviorModified: 0
   m_ViewState:
     ValidContent: 10
-    ViewModelState: 7adaee72040000001c0000009c0000000200000003000000ffffffff2212f54802000000180000000100000076fa4866010000002c0000000200000076c7186c68382644955541a5e9340209a2640000000700000100000002000000c26f730c00000000000000000000000076c7186c68382644955541a5e9340209c4640000000b00000000000002000000247dc97700000000000000000000000076c7186c68382644955541a5e9340209c8640000000b000000000000y
+    ViewModelState: 7adaee72040000001c000000cc0600000200000024000000ffffffff2212f54802000000180000000100000076fa4866010000002c0000002300000076c7186c68382644955541a5e9340209b4620000000500000100000002000000c26f730c00000000000000000000000076c7186c68382644955541a5e9340209c5640000000300000000000002000000247dc97700000000000000000000000076c7186c68382644955541a5e9340209276500000003000000000000020000008fa8852700000000000000000000000076c7186c68382644955541a5e934020973670000001100000000000002000000a086010000000000131d353b0000000076c7186c68382644955541a5e9340209e2670000000300000000000002000000a086010000000000e8cdf9600000000076c7186c68382644955541a5e93402091f680000000300000000000002000000a086010000000000913465710000000076c7186c68382644955541a5e93402096f680000000300000000000002000000a0860100000000002b0c263a0000000076c7186c68382644955541a5e9340209096d0000005d00000000000002000000a086010000000000ffa5446b0000000076c7186c68382644955541a5e934020923690000000300000000000002000000a0860100000000001b58e15f0000000076c7186c68382644955541a5e9340209c868000000030000000000000200000073edf24000000000000000000000000076c7186c68382644955541a5e934020968690000005300000100000002000000a086010000000000fcfd4c2a0000000076c7186c68382644955541a5e93402098a69000000030000000000000200000085ab933200000000000000000000000076c7186c68382644955541a5e9340209a266000000a500000000000002000000a08601000000000041cc67210000000076c7186c68382644955541a5e9340209fa690000000300000000000002000000a0860100000000008391df300000000076c7186c68382644955541a5e93402094f6a0000002b00000000000002000000a08601000000000078d1d8540000000076c7186c68382644955541a5e93402099a6b000000ad00000000000002000000a0860100000000001d58944d0000000076c7186c68382644955541a5e9340209036a000000bb00000000000002000000a0860100000000003b3a78500000000076c7186c68382644955541a5e9340209bf6b0000003f00000000000002000000a086010000000000c9e1ed0b0000000076c7186c68382644955541a5e9340209e76b0000005900000000000002000000a08601000000000092d579570000000076c7186c68382644955541a5e9340209f7690000000700000000000002000000a086010000000000a089bc790000000076c7186c68382644955541a5e9340209136a00000089000000000000020000006e75180f00000000000000000000000076c7186c68382644955541a5e9340209576a0000007300000000000002000000fbb6821000000000000000000000000076c7186c68382644955541a5e9340209786b0000002b0000000000000200000062679d5c00000000000000000000000076c7186c68382644955541a5e9340209986a0000005d00000000000002000000c03c5c4e00000000000000000000000076c7186c68382644955541a5e9340209456b000000b70000000000000200000009100b6300000000000000000000000076c7186c68382644955541a5e9340209cb6c0000005b00000100000002000000b8e77a2200000000000000000000000076c7186c68382644955541a5e93402096d670000003d0000000000000200000056d6c97b00000000000000000000000076c7186c68382644955541a5e9340209ac6e000000590000000000000200000087eef06300000000000000000000000076c7186c68382644955541a5e93402093c6f0000004500000000000002000000a0860100000000009cf23c410000000076c7186c68382644955541a5e93402094b6e0000001900000000000002000000a086010000000000dd1c423b0000000076c7186c68382644955541a5e9340209466e0000002b00000000000002000000a0860100000000002290150b0000000076c7186c68382644955541a5e9340209196f000000a700000000000002000000a08601000000000085c7c6090000000076c7186c68382644955541a5e93402095e6e0000008100000000000002000000a0860100000000003f4f385c0000000076c7186c68382644955541a5e9340209506f0000007700000000000002000000a0860100000000002ad5085e0000000076c7186c68382644955541a5e9340209ca6e0000005f00000000000002000000d6759c2600000000000000000000000076c7186c68382644955541a5e93402094e7000000005000002000000y
     SearchText: 
     Columns:
     - ColumnId: Visibility
@@ -1444,7 +1444,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Mine/Models/Base/Materials
+    - Assets/Mine/Models/Rocks/Materials
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1455,29 +1455,29 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Mine/Models/Base/Materials
+  - Assets/Mine/Models/Rocks/Materials
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\Admin\Documents\archivoUnity\Juergo3D\Ellinas-Proyecto3D
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 70}
+    scrollPos: {x: 0, y: 126}
     m_SelectedIDs:
-    - m_rawData: 1099511654430
+    - m_rawData: 1099511654004
     m_LastClickedID:
-      m_rawData: 1099511654430
+      m_rawData: 1099511654004
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1511,15 +1511,15 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1547,10 +1547,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
+    m_SelectedInstanceIDs:
+    - m_rawData: 5497558167630
     m_LastClickedEntityId:
-      m_rawData: 0
-    m_HadKeyboardFocusLastEvent: 1
+      m_rawData: 5497558167630
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs:
     - m_rawData: 1099511657213
     - m_rawData: 1099511657054
@@ -1680,15 +1681,15 @@ MonoBehaviour:
       m_rawData: 1099511654179
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1722,15 +1723,15 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1887,15 +1888,15 @@ MonoBehaviour:
       m_rawData: 20890720956008
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1929,15 +1930,15 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511653654
-    - m_rawData: 1099511653655
-    - m_rawData: 1099511653656
-    - m_rawData: 1099511653657
-    - m_rawData: 1099511653658
-    - m_rawData: 1099511653659
-    - m_rawData: 1099511653660
-    - m_rawData: 1099511653661
-    - m_rawData: 1099511653662
+    - m_rawData: 1099511653852
+    - m_rawData: 1099511653853
+    - m_rawData: 1099511653854
+    - m_rawData: 1099511653855
+    - m_rawData: 1099511653856
+    - m_rawData: 1099511653857
+    - m_rawData: 1099511653858
+    - m_rawData: 1099511653859
+    - m_rawData: 1099511653860
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
