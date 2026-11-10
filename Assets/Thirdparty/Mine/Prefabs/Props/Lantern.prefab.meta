@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b21b9fa495148e42b26f55208b972d1
+timeCreated: 1496608040
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Lantern.prefab
+  uploadId: 183947

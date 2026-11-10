@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 12f71c0aa5ea3cf4e95634340ac33424
+timeCreated: 1496760912
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Rocks/Materials/OreStone.mat
+  uploadId: 183947

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 74e913146f9884b4a94bc54f583ac3cf
+timeCreated: 1496446130
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Props/Materials/Crate.mat
+  uploadId: 183947

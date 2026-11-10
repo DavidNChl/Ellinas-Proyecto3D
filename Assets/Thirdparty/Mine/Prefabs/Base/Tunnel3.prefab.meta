@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e7e2517ddd48c854baa53d34be5e756e
+timeCreated: 1496607731
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Base/Tunnel3.prefab
+  uploadId: 183947

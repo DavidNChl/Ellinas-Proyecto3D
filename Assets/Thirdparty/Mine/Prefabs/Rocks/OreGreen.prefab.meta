@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 746cf6191a725644b9a17fc0ebd226d6
+timeCreated: 1496613552
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Rocks/OreGreen.prefab
+  uploadId: 183947

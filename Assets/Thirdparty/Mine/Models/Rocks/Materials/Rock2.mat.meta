@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: edf233031901701449d7d636b27ff325
+timeCreated: 1496013631
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Rocks/Materials/Rock2.mat
+  uploadId: 183947

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d25972a0f3738164a96d1e2e5dc431c4
+timeCreated: 1496331833
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Props/Materials/Wood.mat
+  uploadId: 183947

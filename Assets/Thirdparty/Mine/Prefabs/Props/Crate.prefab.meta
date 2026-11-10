@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 09aefe7ef907e564baa4a2df773ad5c4
+timeCreated: 1496607828
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Crate.prefab
+  uploadId: 183947

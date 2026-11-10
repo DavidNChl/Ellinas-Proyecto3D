@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04f773cac7dc8e64db522b79b6fe6043
+timeCreated: 1496614832
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Example/Example.unity
+  uploadId: 183947
