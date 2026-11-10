@@ -1,15 +1,44 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+# =========================================================================
+# UNITY EDITOR TEMPORARY & GENERATED FOLDERS
+# =========================================================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Uu]ser[Ss]ettings/
+[Rr]ecordings/
+[Aa]sset[Oo]verlays/
+[Pp]icker[Ss]tate/
 
-# Asset meta data should only be ignored for Unity automated builds.
-# Never ignore .meta files in a standard collaborative project.
+# =========================================================================
+# UNITY SPECIFIC FILES & CACHE
+# =========================================================================
+Assets/AssetStoreTools*
+Assets/Plugins/Editor/JetBrains*
+Assets/[Aa]ddressable[As]sets[Dd]ata/*/*.bin*
+.plastic/
+.plasticversion
+.cloud/
+sysinfo.txt
+*.stackdump
 
-# Visual Studio / VS Code / Rider
+# =========================================================================
+# BUILDS & EXECUTABLES
+# =========================================================================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.ipa
+*.dmg
+
+# =========================================================================
+# IDEs & CODE EDITORS (Visual Studio / VS Code / Rider)
+# =========================================================================
 .vs/
 .vscode/
 .idea/
@@ -22,8 +51,22 @@
 *.pidb
 *.booproj
 *.svd
+*.userosv
+*.dnX
+*.csproj.assemblyalias.csproj
 
-# OS generated files
+# =========================================================================
+# SYSTEM & OS GENERATED FILES
+# =========================================================================
 .DS_Store
+.DS_Store?
+ehthumbs.db
+Icon?
 Thumbs.db
 Desktop.ini
+
+# =========================================================================
+# CRITICAL EXCEPTION FOR COLLABORATIVE PROJECTS
+# =========================================================================
+# NUNCA ignorar los archivos .meta. Guardan los GUIDs de assets y escenas.
+!*.meta
