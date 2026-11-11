@@ -55,5 +55,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5154640065634820841, guid: ea9476d7d0a5df44b9e7228ebdec0a0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5792832135156269348}
+    - targetCorrespondingSourceObject: {fileID: 5154640065634820841, guid: ea9476d7d0a5df44b9e7228ebdec0a0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3325231531838670509}
+    - targetCorrespondingSourceObject: {fileID: 5154640065634820841, guid: ea9476d7d0a5df44b9e7228ebdec0a0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5425601757908605016}
   m_SourcePrefab: {fileID: 100100000, guid: ea9476d7d0a5df44b9e7228ebdec0a0c, type: 3}
+--- !u!1 &3754501211387480501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5154640065634820841, guid: ea9476d7d0a5df44b9e7228ebdec0a0c, type: 3}
+  m_PrefabInstance: {fileID: 8327823260270898012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5792832135156269348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754501211387480501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58837630b93ada549aa88be71e72eb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaludJugador
+  saludMaxima: 100
+--- !u!143 &3325231531838670509
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754501211387480501}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5425601757908605016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754501211387480501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31561e4431d9bc04d8124f34a2ddbc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControladorJugador
+  velocidad: 6
+  fuerzaSalto: 1.2
+  gravedad: -9.81
+  camaraTransform: {fileID: 0}
+  sensibilidadMouse: 0.1
+  limiteCamaraVertical: 80
