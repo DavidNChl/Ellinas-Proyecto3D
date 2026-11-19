@@ -22,12 +22,25 @@ public class EnemigoSigiloso : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
-        // Busca automáticamente al jugador por la cámara del ControladorJugador
-        ControladorJugador jugador = FindFirstObjectByType<ControladorJugador>();
+        ControladorJugador jugador =
+    FindFirstObjectByType<ControladorJugador>();
+
         if (jugador != null)
         {
             jugadorTransform = jugador.transform;
-            camaraJugador = jugador.camaraTransform.GetComponent<Camera>();
+
+            Transform vistaJugador = jugador.camaraTransform;
+
+            if (vistaJugador != null)
+            {
+                camaraJugador = vistaJugador.GetComponent<Camera>();
+            }
+
+            // El Transform podría ser un pivote sin componente Camera.
+            if (camaraJugador == null)
+            {
+                camaraJugador = Camera.main;
+            }
         }
 
         // Determina si este enemigo individual intentará acercarse
