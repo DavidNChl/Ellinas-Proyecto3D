@@ -5,7 +5,8 @@ using UnityEngine.InputSystem; // Nuevo Input System
 public class ControladorJugador : MonoBehaviour
 {
     [Header("Movimiento")]
-    public float velocidad = 6.0f;
+    public float velocidadCaminar = 4.0f;
+    public float velocidadCorrer = 7.5f;
     public float fuerzaSalto = 1.2f;
     public float gravedad = -9.81f;
 
@@ -15,6 +16,7 @@ public class ControladorJugador : MonoBehaviour
     public float limiteCamaraVertical = 80.0f;
 
     private CharacterController controller;
+    private Animator anim;
     private Vector3 velocidadVertical;
     private bool estaEnSuelo;
     private float rotacionX = 0.0f;
@@ -22,6 +24,8 @@ public class ControladorJugador : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        // Busca el Animator en el jugador o en su modelo 3D hijo
+        anim = GetComponentInChildren<Animator>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -58,6 +62,7 @@ public class ControladorJugador : MonoBehaviour
         // Lectura del nuevo Input System para teclado (WASD / Flechas)
         float x = 0f;
         float z = 0f;
+        bool estaCorriendo = false;
 
         if (Keyboard.current != null)
         {
@@ -65,10 +70,26 @@ public class ControladorJugador : MonoBehaviour
             if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) z -= 1f;
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x += 1f;
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x -= 1f;
+
+            // Detectar si mantiene presionado Shift izquierdo para correr
+            estaCorriendo = Keyboard.current.leftShiftKey.isPressed;
         }
 
         Vector3 mover = transform.right * x + transform.forward * z;
-        controller.Move(mover.normalized * velocidad * Time.deltaTime);
+        float velocidadActual = 0f;
+
+        // Si el jugador está presionando alguna tecla de movimiento
+        if (mover.magnitude >= 0.1f)
+        {
+            velocidadActual = estaCorriendo ? velocidadCorrer : velocidadCaminar;
+            controller.Move(mover.normalized * velocidadActual * Time.deltaTime);
+        }
+
+        // Enviar la velocidad al Animator (0 = Quieto, 4 = Caminar, 7.5 = Correr)
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", velocidadActual);
+        }
 
         // Salto con barra espaciadora
         if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && estaEnSuelo)
