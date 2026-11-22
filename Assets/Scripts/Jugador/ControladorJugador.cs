@@ -1,103 +1,141 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Nuevo Input System
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerInputReader))]
+[RequireComponent(typeof(PlayerLookController))]
 public class ControladorJugador : MonoBehaviour
 {
-    [Header("Movimiento")]
-    public float velocidadCaminar = 4.0f;
-    public float velocidadCorrer = 7.5f;
-    public float fuerzaSalto = 1.2f;
-    public float gravedad = -9.81f;
+    [Header("Referencias")]
+    [SerializeField] private PlayerInputReader input;
+    [SerializeField] private PlayerLookController vista;
 
-    [Header("Cámara")]
-    public Transform camaraTransform;
-    public float sensibilidadMouse = 0.1f;
-    public float limiteCamaraVertical = 80.0f;
+    [Header("Movimiento")]
+    [SerializeField] private float velocidad = 3.5f;
+    [SerializeField] private float velocidadCarrera = 7f;
+    [SerializeField] private float velocidadGiro = 900f;
+
+    [Header("Salto")]
+    [Tooltip("Altura aproximada del salto en metros.")]
+    [SerializeField] private float fuerzaSalto = 1.35f;
+    [SerializeField] private float gravedad = -20f;
 
     private CharacterController controller;
-    private Animator anim;
-    private Vector3 velocidadVertical;
-    private bool estaEnSuelo;
-    private float rotacionX = 0.0f;
+    private float velocidadVertical;
 
-    void Start()
+    public bool EstaEnSuelo => controller.isGrounded;
+    public bool EstaCorriendo { get; private set; }
+    public float IntensidadMovimiento { get; private set; }
+
+    // Compatibilidad temporal con EnemigoSigiloso.
+    public Transform camaraTransform =>
+        vista != null ? vista.ViewTransform : null;
+
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        // Busca el Animator en el jugador o en su modelo 3D hijo
-        anim = GetComponentInChildren<Animator>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (input == null)
+            input = GetComponent<PlayerInputReader>();
+
+        if (vista == null)
+            vista = GetComponent<PlayerLookController>();
     }
 
-    void Update()
+    private void Update()
     {
-        ManejarRotacion();
-        ManejarMovimiento();
+        ActualizarMovimiento();
     }
 
-    void ManejarRotacion()
+    private void ActualizarMovimiento()
     {
-        if (camaraTransform == null || Mouse.current == null) return;
+        bool enSuelo = controller.isGrounded;
 
-        // Lectura del nuevo Input System para el ratón
-        Vector2 deltaMouse = Mouse.current.delta.ReadValue() * sensibilidadMouse;
+        if (enSuelo && velocidadVertical < 0f)
+            velocidadVertical = -2f;
 
-        rotacionX -= deltaMouse.y;
-        rotacionX = Mathf.Clamp(rotacionX, -limiteCamaraVertical, limiteCamaraVertical);
-        camaraTransform.localRotation = Quaternion.Euler(rotacionX, 0f, 0f);
+        Vector2 entrada = input.Movement;
+        IntensidadMovimiento = entrada.magnitude;
 
-        transform.Rotate(Vector3.up * deltaMouse.x);
+        EstaCorriendo =
+            input.SprintHeld &&
+            entrada.sqrMagnitude > 0.01f;
+
+        Transform camara = vista.ViewTransform;
+
+        if (camara == null)
+            return;
+
+        // Dirección de la cámara proyectada sobre el suelo.
+        // Mirar arriba o abajo no añade movimiento vertical.
+        Vector3 adelante = Vector3.ProjectOnPlane(
+            camara.forward,
+            Vector3.up
+        );
+
+        if (adelante.sqrMagnitude < 0.001f)
+        {
+            adelante = vista.MovementRotation * Vector3.forward;
+        }
+
+        adelante.Normalize();
+
+        Vector3 derecha = Vector3.Cross(
+            Vector3.up,
+            adelante
+        ).normalized;
+
+        Vector3 direccion =
+            adelante * entrada.y +
+            derecha * entrada.x;
+
+        if (vista.IsThirdPerson)
+        {
+            if (direccion.sqrMagnitude > 0.01f)
+            {
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    Quaternion.LookRotation(direccion),
+                    velocidadGiro * Time.deltaTime
+                );
+            }
+        }
+        else
+        {
+            transform.rotation = vista.MovementRotation;
+        }
+
+        if (input.JumpPressed && enSuelo)
+        {
+            velocidadVertical = Mathf.Sqrt(
+                fuerzaSalto * -2f * gravedad
+            );
+        }
+
+        velocidadVertical += gravedad * Time.deltaTime;
+
+        float velocidadActual = EstaCorriendo
+            ? velocidadCarrera
+            : velocidad;
+
+        Vector3 movimiento =
+            direccion * velocidadActual +
+            Vector3.up * velocidadVertical;
+
+        CollisionFlags colisiones = controller.Move(
+            movimiento * Time.deltaTime
+        );
+
+        if ((colisiones & CollisionFlags.Above) != 0 &&
+            velocidadVertical > 0f)
+        {
+            velocidadVertical = 0f;
+        }
     }
 
-    void ManejarMovimiento()
+    private void OnDisable()
     {
-        estaEnSuelo = controller.isGrounded;
-        if (estaEnSuelo && velocidadVertical.y < 0)
-        {
-            velocidadVertical.y = -2f;
-        }
-
-        // Lectura del nuevo Input System para teclado (WASD / Flechas)
-        float x = 0f;
-        float z = 0f;
-        bool estaCorriendo = false;
-
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) z += 1f;
-            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) z -= 1f;
-            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x += 1f;
-            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x -= 1f;
-
-            // Detectar si mantiene presionado Shift izquierdo para correr
-            estaCorriendo = Keyboard.current.leftShiftKey.isPressed;
-        }
-
-        Vector3 mover = transform.right * x + transform.forward * z;
-        float velocidadActual = 0f;
-
-        // Si el jugador está presionando alguna tecla de movimiento
-        if (mover.magnitude >= 0.1f)
-        {
-            velocidadActual = estaCorriendo ? velocidadCorrer : velocidadCaminar;
-            controller.Move(mover.normalized * velocidadActual * Time.deltaTime);
-        }
-
-        // Enviar la velocidad al Animator (0 = Quieto, 4 = Caminar, 7.5 = Correr)
-        if (anim != null)
-        {
-            anim.SetFloat("Speed", velocidadActual);
-        }
-
-        // Salto con barra espaciadora
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && estaEnSuelo)
-        {
-            velocidadVertical.y = Mathf.Sqrt(fuerzaSalto * -2f * gravedad);
-        }
-
-        velocidadVertical.y += gravedad * Time.deltaTime;
-        controller.Move(velocidadVertical * Time.deltaTime);
+        velocidadVertical = 0f;
+        EstaCorriendo = false;
+        IntensidadMovimiento = 0f;
     }
 }
