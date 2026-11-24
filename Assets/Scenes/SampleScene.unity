@@ -13779,7 +13779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManejadorHorda
   bajasParaModoRabia: 30
   bajasActuales: 0
-  modoRabiaActivado: 0
+  modoRabiaActivado: 1
 --- !u!4 &2040190209
 Transform:
   m_ObjectHideFlags: 0
@@ -13972,6 +13972,14 @@ PrefabInstance:
     - target: {fileID: 6055591230435108871, guid: b8b0346eface4ce47a8699eb6d7a3ce6, type: 3}
       propertyPath: m_Name
       value: Jugador
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266634446415416499, guid: b8b0346eface4ce47a8699eb6d7a3ce6, type: 3}
+      propertyPath: velocidadGiro
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266634446415416499, guid: b8b0346eface4ce47a8699eb6d7a3ce6, type: 3}
+      propertyPath: velocidadCarrera
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6777784003691752168, guid: b8b0346eface4ce47a8699eb6d7a3ce6, type: 3}
       propertyPath: firstPersonTarget
