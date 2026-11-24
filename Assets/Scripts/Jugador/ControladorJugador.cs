@@ -25,7 +25,9 @@ public class ControladorJugador : MonoBehaviour
     public bool EstaEnSuelo => controller.isGrounded;
     public bool EstaCorriendo { get; private set; }
     public float IntensidadMovimiento { get; private set; }
-
+    public float VelocidadActual =>
+    IntensidadMovimiento <= 0.01f ? 0f : (EstaCorriendo ? velocidadCarrera : velocidad);
+    
     // Compatibilidad temporal con EnemigoSigiloso.
     public Transform camaraTransform =>
         vista != null ? vista.ViewTransform : null;
