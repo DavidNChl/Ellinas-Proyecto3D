@@ -13,8 +13,7 @@ public class StrategicCowardAI : MonoBehaviour
     [SerializeField] Transform player;
 
     [Header("Salud")]
-    [SerializeField] float maxHealth = 100f;
-    [SerializeField] float currentHealth = 100f;
+    [SerializeField] private SaludEnemigo salud;
 
     [Header("Parámetros de Movimiento y Detección")]
     [SerializeField] float patrolSpeed = 3f;
@@ -36,7 +35,7 @@ public class StrategicCowardAI : MonoBehaviour
     void Update()
     {
         float d = Vector3.Distance(transform.position, player.position);
-        bool isLowHealth = currentHealth <= (maxHealth * 0.5f);
+        bool isLowHealth = salud != null && salud.PorcentajeSalud <= 0.5f;
 
         switch (state)
         {

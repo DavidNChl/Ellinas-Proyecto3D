@@ -1,44 +1,51 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class DisparoJugador : MonoBehaviour
 {
+    [Header("Referencias")]
+    [SerializeField] private PlayerInputReader input;
+    [SerializeField] private InventarioJugador inventario;
+    [SerializeField] private Animator animatorArma;
+    [SerializeField] private Camera cam;
+
     [Header("Configuración de Arma")]
-    public float danoDisparo = 25f;
-    public float alcance = 100f;
-    public LayerMask capasImpactables; // Capa de los enemigos y mapa
+    [SerializeField] private float danoDisparo = 25f;
+    [SerializeField] private float alcance = 100f;
+    [SerializeField] private LayerMask capasImpactables;
 
-    private Camera cam;
+    private static readonly int DispararHash = Animator.StringToHash("Disparar");
 
-    void Start()
+    private void Awake()
     {
-        cam = GetComponent<Camera>();
-        if (cam == null)
-        {
-            cam = Camera.main;
-        }
+        if (input == null) input = GetComponentInParent<PlayerInputReader>();
+        if (inventario == null) inventario = GetComponentInParent<InventarioJugador>();
+        if (cam == null) cam = GetComponent<Camera>() ?? Camera.main;
     }
 
-    void Update()
+    private void OnEnable()
     {
-        // Detecta el clic izquierdo del ratón con el nuevo Input System
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Disparar();
-        }
+        if (input != null) input.FireRequested += Disparar;
     }
 
-    void Disparar()
+    private void OnDisable()
     {
-        Ray rayo = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)); // Centro exacto de la pantalla
-        RaycastHit hit;
+        if (input != null) input.FireRequested -= Disparar;
+    }
 
-        if (Physics.Raycast(rayo, out hit, alcance, capasImpactables))
+    private void Disparar()
+    {
+        // Solo dispara si el slot seleccionado actualmente contiene el arma
+        if (inventario == null || !inventario.TieneArmaEquipada) return;
+        if (cam == null) return;
+
+        if (animatorArma != null)
+            animatorArma.SetTrigger(DispararHash);
+
+        Ray rayo = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+
+        if (Physics.Raycast(rayo, out RaycastHit hit, alcance, capasImpactables, QueryTriggerInteraction.Ignore))
         {
-            Debug.Log("Impacto en: " + hit.transform.name);
-
-            // Busca el componente de salud en el objeto alcanzado
-            SaludEnemigo enemigo = hit.transform.GetComponent<SaludEnemigo>();
+            SaludEnemigo enemigo = hit.collider.GetComponentInParent<SaludEnemigo>();
             if (enemigo != null)
             {
                 enemigo.RecibirDano(danoDisparo);

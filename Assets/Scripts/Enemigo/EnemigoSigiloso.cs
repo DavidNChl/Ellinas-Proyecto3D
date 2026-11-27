@@ -110,13 +110,4 @@ public class EnemigoSigiloso : MonoBehaviour
         return true; // Está dentro de pantalla y sin obstáculos enfrente
     }
 
-    // Llamar a este método desde tu sistema de armas/combate al matar al enemigo
-    public void Morir()
-    {
-        if (ManejadorHorda.Instancia != null)
-        {
-            ManejadorHorda.Instancia.RegistrarMuerteEnemigo();
-        }
-        Destroy(gameObject);
-    }
 }

@@ -15,6 +15,7 @@ public class AranaAnimationController : MonoBehaviour
 
     private static readonly int SpeedHash = Animator.StringToHash("speed");
     private static readonly int AnimSpeedHash = Animator.StringToHash("animSpeed");
+    private static readonly int AttackHash = Animator.StringToHash("Attack");
 
     private void Awake()
     {
@@ -33,16 +34,20 @@ public class AranaAnimationController : MonoBehaviour
 
     private void Update()
     {
-        // Si el agente está detenido (ej. congelado al mirarlo en EnemigoSigiloso), velocidad es 0
         float velocidadActual = agent.isStopped ? 0f : agent.velocity.magnitude;
 
         animator.SetFloat(SpeedHash, velocidadActual, suavizadoTransicion, Time.deltaTime);
 
-        // Ajusta la cadencia de las patas proporcionalmente a la velocidad del agente
         float multiplicador = velocidadActual > 0.1f
             ? Mathf.Clamp(velocidadActual / velocidadBaseCaminata, 0.75f, 2.5f)
             : 1f;
 
         animator.SetFloat(AnimSpeedHash, multiplicador);
+    }
+
+    public void ReproducirAtaque()
+    {
+        if (animator != null)
+            animator.SetTrigger(AttackHash);
     }
 }

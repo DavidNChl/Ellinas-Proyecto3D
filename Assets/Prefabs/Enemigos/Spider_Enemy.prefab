@@ -1101,6 +1101,7 @@ GameObject:
   - component: {fileID: 177586892621953855}
   - component: {fileID: 1069630584316042432}
   - component: {fileID: 8972009549232033340}
+  - component: {fileID: 2529906151589317564}
   m_Layer: 0
   m_Name: Spider_Enemy
   m_TagString: Untagged
@@ -1117,7 +1118,7 @@ Transform:
   m_GameObject: {fileID: 8573667837667212162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 674.0993, y: 0.78, z: 457.05603}
+  m_LocalPosition: {x: -14.86971, y: -1.02, z: -5.24781}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1217,6 +1218,25 @@ MonoBehaviour:
   animator: {fileID: 0}
   velocidadBaseCaminata: 2.5
   suavizadoTransicion: 0.1
+--- !u!114 &2529906151589317564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573667837667212162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdff17e2730ccd448cfb8d9df18a150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AtaqueArana
+  agent: {fileID: 0}
+  animController: {fileID: 0}
+  rangoAtaque: 2.2
+  alcanceGolpe: 2.8
+  danoPorGolpe: 25
+  tiempoEntreAtaques: 1.5
+  retardoImpacto: 0.42
 --- !u!1 &8945662196611480528
 GameObject:
   m_ObjectHideFlags: 0

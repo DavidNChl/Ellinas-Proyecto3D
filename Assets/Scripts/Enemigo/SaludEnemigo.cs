@@ -5,6 +5,7 @@ public class SaludEnemigo : MonoBehaviour
     [Header("Salud del Enemigo")]
     public float saludMaxima = 50f;
     private float saludActual;
+    public float PorcentajeSalud => saludMaxima > 0f ? saludActual / saludMaxima : 0f;
 
     void Start()
     {
