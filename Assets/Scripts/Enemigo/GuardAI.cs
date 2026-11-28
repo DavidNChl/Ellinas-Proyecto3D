@@ -16,37 +16,65 @@ public class GuardAI : MonoBehaviour
     [SerializeField] float chaseSpeed = 6f;
     [SerializeField] float detectionRange = 10f;
     [SerializeField] float searchWait = 3f;
+    [SerializeField] float aiUpdateInterval = 0.2f; // 5 evaluaciones/seg
 
     NavMeshAgent agent;
     Renderer rend;
+    MaterialPropertyBlock propBlock;
+    static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+
     int currentWaypoint;
     Vector3 lastKnownPosition;
     float searchTimer;
+    float aiTimer;
+    float detectionRangeSqr;
+    float loseRangeSqr;
 
     void Awake()
     {
-        // Cachear componentes una sola vez
         agent = GetComponent<NavMeshAgent>();
         rend = GetComponentInChildren<Renderer>();
+        propBlock = new MaterialPropertyBlock();
+
+        detectionRangeSqr = detectionRange * detectionRange;
+        float loseRange = detectionRange * 1.5f;
+        loseRangeSqr = loseRange * loseRange;
+        aiTimer = Random.Range(0f, aiUpdateInterval);
     }
 
     void Update()
     {
-        float d = Vector3.Distance(transform.position, player.position);
+        if (player == null) return;
+
+        if (state == State.Search && !agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            searchTimer += Time.deltaTime;
+            if (searchTimer >= searchWait)
+            {
+                SetState(State.Patrol);
+                return;
+            }
+        }
+
+        aiTimer -= Time.deltaTime;
+        if (aiTimer > 0f) return;
+        aiTimer = aiUpdateInterval;
+
+        // sqrMagnitude evita calcular raíces cuadradas cada frame
+        float dSqr = (transform.position - player.position).sqrMagnitude;
 
         switch (state)
         {
             case State.Patrol:
                 Patrol();
-                if (d < detectionRange)
+                if (dSqr < detectionRangeSqr)
                     SetState(State.Chase);
                 break;
 
             case State.Chase:
                 agent.speed = chaseSpeed;
                 agent.SetDestination(player.position);
-                // Margen de histéresis (1.5x) para evitar parpadeo en el borde
-                if (d > detectionRange * 1.5f)
+                if (dSqr > loseRangeSqr)
                 {
                     lastKnownPosition = player.position;
                     SetState(State.Search);
@@ -56,28 +84,18 @@ public class GuardAI : MonoBehaviour
             case State.Search:
                 agent.speed = patrolSpeed;
                 agent.SetDestination(lastKnownPosition);
-                if (d < detectionRange)
-                {
+                if (dSqr < detectionRangeSqr)
                     SetState(State.Chase);
-                    break;
-                }
-                if (!agent.pathPending && agent.remainingDistance < 0.5f)
-                {
-                    searchTimer += Time.deltaTime;
-                    if (searchTimer >= searchWait)
-                        SetState(State.Patrol);
-                }
                 break;
         }
     }
 
     void Patrol()
     {
-        if (waypoints.Length == 0) return;
+        if (waypoints == null || waypoints.Length == 0) return;
         agent.speed = patrolSpeed;
         agent.SetDestination(waypoints[currentWaypoint].position);
 
-        // Verificar pathPending evita que salte waypoints en un solo frame
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
@@ -89,14 +107,18 @@ public class GuardAI : MonoBehaviour
         state = next;
         searchTimer = 0f;
 
-        // Feedback visual según el estado
-        rend.material.color =
-            next == State.Chase ? Color.red :
-            next == State.Search ? Color.yellow :
-            Color.green;
+        if (rend != null)
+        {
+            // MaterialPropertyBlock cambia color sin clonar materiales ni romper batching
+            Color c = next == State.Chase ? Color.red :
+                      next == State.Search ? Color.yellow :
+                      Color.green;
+            rend.GetPropertyBlock(propBlock);
+            propBlock.SetColor(BaseColorId, c);
+            rend.SetPropertyBlock(propBlock);
+        }
     }
 
-    // Dibujar radios de detección en la vista de Escena
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
