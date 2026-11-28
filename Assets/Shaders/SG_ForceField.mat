@@ -51,8 +51,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cell_Scale: 20
-    - _Fresnel_Power: 5
+    - _Cell_Scale: 10
+    - _Fresnel_Power: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
